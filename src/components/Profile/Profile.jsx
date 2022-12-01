@@ -16,7 +16,11 @@ const Profile = () => {
   return (
     <div>
       <h1>Profile</h1>
-      {!user ? <Spin size="large" />: <p> {user.name}</p>}
+      {!user ? <Spin size="large" />: <div>
+        
+        <p> {user.name}</p>
+        <p>{user.orderIds.map(order => order.productIds.map(product=> <p> Producto:{product.name}</p>))}</p>
+        </div>}
       {/* <p> {user.name}</p> */}
     </div>
   );
